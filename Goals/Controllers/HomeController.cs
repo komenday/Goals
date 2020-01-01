@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Goals.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +9,20 @@ namespace Goals.Controllers
 {
     public class HomeController : Controller
     {
+        public GoalsManager Manager { get; set; }
+
+        GoalContext db = new GoalContext();
+        IEnumerable<Goal> dbgoals;
+
         public ActionResult Index()
         {
+            dbgoals = db.Goals;
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult All()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(db.Goals);
         }
     }
 }
