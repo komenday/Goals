@@ -9,20 +9,28 @@ namespace Goals.Controllers
 {
     public class HomeController : Controller
     {
-        public GoalsManager Manager { get; set; }
-
-        GoalContext db = new GoalContext();
-        IEnumerable<Goal> dbgoals;
+        static public GoalContext db = new GoalContext();
+        static public GoalsManager goalsManager;
 
         public ActionResult Index()
         {
-            dbgoals = db.Goals;
+            goalsManager = new GoalsManager(db.Goals);
             return View();
         }
 
-        public ActionResult All()
+        [HttpGet]
+        public ActionResult AddGoal()
         {
-            return View(db.Goals);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddGoal(Goal goal)
+        {
+            goal.Id = goalsManager.AllGoals.Count + 1;
+            db.Goals.Add(goal);
+            db.SaveChanges();
+            return Index();
         }
     }
 }

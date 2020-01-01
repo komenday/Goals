@@ -127,7 +127,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AllController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportantController.cs" />
+    <Compile Include="Controllers\PlannedController.cs" />
+    <Compile Include="Controllers\TodaysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,8 +176,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\All.cshtml" />
+    <Content Include="Views\All\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Planned\Index.cshtml" />
+    <Content Include="Views\Todays\Index.cshtml" />
+    <Content Include="Views\Important\Index.cshtml" />
+    <Content Include="Views\Home\AddGoal.cshtml" />
+    <Content Include="Views\Shared\_Goals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

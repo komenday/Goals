@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Add goal</h3>
+    <form method="post" action="">
+        <p>Enter title</p>
+        <input type="text" name="Title" />
+        <p>Enter description</p>
+        <input type="text" name="Description" />
+        <p>Enter importance</p>
+        <input type="radio" name="Importance" value="High" />High<br />
+        <input type="radio" name="Importance" value="Normal" checked />Normal<br />
+        <input type="radio" name="Importance" value="Low" />Low<br />
+        <p>Choose due date (if needed)</p>
+        <input type="date" name="duedate"/>
+        <p>Enter state</p>
+        <input type="radio" name="State" value="active" checked />Active<br />
+        <input type="radio" name="State" value="completed" />Completed<br />
+
+        <input type="submit" value="Send" />
+
+    </form>
+</div>

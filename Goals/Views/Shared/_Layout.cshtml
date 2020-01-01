@@ -8,12 +8,12 @@
 
 <body>
     <nav>
-        <ul class="menu">
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>@Html.ActionLink("All goals", "All", "Home")</li>
-            <li>@Html.ActionLink("Planned goals", "Planned", "Home")</li>
-            <li>@Html.ActionLink("Important goals", "Important", "Home")</li>
-            <li>@Html.ActionLink("Today's goals", "Todays", "Home")</li>
+        <ul class="list-group">
+            <li class="list-group-item">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="list-group-item">@Html.ActionLink("All goals", "Index", "All")</li>
+            <li class="list-group-item">@Html.ActionLink("Planned goals", "Index", "Planned")</li>
+            <li class="list-group-item">@Html.ActionLink("Important goals", "Index", "Important")</li>
+            <li class="list-group-item">@Html.ActionLink("Today's goals", "Index", "Todays")</li>
         </ul>
     </nav>
     @RenderBody()
